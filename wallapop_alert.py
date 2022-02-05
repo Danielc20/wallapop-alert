@@ -44,8 +44,10 @@ def wallAlert(urlSearch):
 
     # Read web
     results = Products.all(urlSearch)
+    print("Found amount [{cant}]".format(cant=len(results)))
 
     for item in results:
+        print(item)
         data_temp.append({'title': item.title
                           , 'price': item.price
                           , 'relativeUrl': item.url })
