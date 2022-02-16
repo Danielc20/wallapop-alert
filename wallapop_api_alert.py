@@ -51,9 +51,7 @@ def api(url, header) -> json:
 
 
 def main():
-    """
-    Vamos por partes.
-    
+    """    
     Lo primero es con los datos que ya tenemos, generar la query, obtener los datos y poder lopear.
     Una vez hecho eso, lo tengo que guardar en algun contenedor accesible.
 
@@ -66,8 +64,12 @@ def main():
     url = generate(API_URL, PARAMS)
     print("URL DE IDA: " + url)
     recivedItems = api(url, API_HEADERS)
-    print(recivedItems["search_objects"])
-    # api(API_URL, API_HEADERS, API_BODY)
+    #print(recivedItems["search_objects"][0])
+    sells = recivedItems['search_objects']
+
+    for item in sells:
+        print(item['id'])
+    # api(API_URL, API_HEADERS, API_BODY)]
 
 
 
